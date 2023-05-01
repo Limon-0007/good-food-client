@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import Slider from './Slider/Slider';
 
 const Home = () => {
     const data = useLoaderData()
@@ -7,7 +8,7 @@ const Home = () => {
     console.log(data);
     return (
         <div>
-            <h2>Hello from home page</h2>
+            <Slider></Slider>
         </div>
     );
 };
