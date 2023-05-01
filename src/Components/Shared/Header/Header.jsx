@@ -39,7 +39,9 @@ const Header = () => {
           </ul>
         </div>
         <div>
+        <Link to="/login">
         <button className="text-white bg-slate-900 rounded px-4 font-semibold ms-2 py-2">Login</button>
+        </Link>
         </div>
     </nav>
   );
