@@ -1,17 +1,34 @@
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../../Routes/AuthContext/AuthProviders";
 
 const Header = () => {
+  const { user, handleSignOut } = useContext(AuthContext);
   const [menu, setMenu] = useState(false);
+
+  const signOut = () => {
+    handleSignOut()
+    .then(result => {
+      console.log(result);
+    })
+    .catch(error => {
+      console.log(error.message);
+    })
+  }
   return (
     <nav className="md:flex items-center justify-between md:px-8 py-5">
       <div className="flex items-center justify-between px-6">
         {/* nav items */}
         <div>
-          <h2 className="text-3xl font-bold text-orange-400">
-            <Link to="/">
+          <h2 className="text-4xl font-bold text-orange-400">
+            <Link className="flex" to="/">
+              <img
+                className="h-10 w-10"
+                src="https://svgsilh.com/svg/305499.svg"
+                alt="Image not found"
+              />
               Good <span className="text-slate-400">Food</span>
             </Link>
           </h2>
@@ -73,11 +90,40 @@ const Header = () => {
             Contact us
           </NavLink>
         </div>
-        <Link to="/login">
-          <button className="rounded font-semibold text-white px-4 py-2 bg-slate-600 hover:bg-slate-900 duration-200">
-            Login
-          </button>
-        </Link>
+        {!user && (
+          <Link to="/login">
+            <button className="rounded font-semibold text-white px-4 py-2 bg-slate-600 hover:bg-slate-900 duration-200">
+              Login
+            </button>
+          </Link>
+        )}
+        {/* image */}
+        {user && (
+          <div className="dropdown dropdown-end">
+            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <div className="w-10 rounded-full">
+                <img src="https://awsimages.detik.net.id/community/media/visual/2022/06/13/zehra-gunes-9.png?w=750&q=90" />
+              </div>
+            </label>
+            <ul
+              tabIndex={0}
+              className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <Link className="justify-between">
+                  Profile
+                  <span className="badge">New</span>
+                </Link>
+              </li>
+              <li>
+                <Link>Settings</Link>
+              </li>
+              <li>
+                <Link onClick={signOut}>Logout</Link>
+              </li>
+            </ul>
+          </div>
+        )}
       </ul>
     </nav>
   );

@@ -1,8 +1,10 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, Navigate } from "react-router-dom";
+import { AuthContext } from "../../../Routes/AuthContext/AuthProviders";
 
 const Register = () => {
-  const [checked, setChecked] = useState(false)
+  const { handleRegister } = useContext(AuthContext);
+  const [checked, setChecked] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -11,14 +13,22 @@ const Register = () => {
     const photoURL = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-
+    handleRegister(email, password)
+    .then(result => {
+      const loggedUser = result.user
+      form.reset()
+      console.log(loggedUser);
+    })
+    .catch(error => {
+      console.log(error.message);
+    })
     console.log(name, photoURL, email, password);
   };
 
-  const handleCheckbox = event => {
+  const handleCheckbox = (event) => {
     const checkbox = event.target.checked;
     setChecked(checkbox);
-  }
+  };
 
   return (
     <div className="hero min-h-screen bg-base-200">
@@ -80,12 +90,21 @@ const Register = () => {
             </div>
             {/* checkbox */}
             <div className="flex gap-2 items-center">
-                <input onClick={handleCheckbox} type="checkbox" name="checkbox" className="checkbox cursor-pointer h-5 w-5 rounded-full" />
-                <span className="label-text font-semibold">Accept our terms & condition</span>
+              <input
+                onClick={handleCheckbox}
+                type="checkbox"
+                name="checkbox"
+                className="checkbox cursor-pointer h-5 w-5 rounded-full"
+              />
+              <span className="label-text font-semibold">
+                Accept our terms & condition
+              </span>
             </div>
             {/* button */}
             <div className="form-control mt-4">
-              <button disabled={!checked} className="btn btn-primary">Register</button>
+              <button disabled={!checked} className="btn btn-primary">
+                Register
+              </button>
             </div>
             <p className="font-semibold mt-2">
               <small>Already have an account? please </small>

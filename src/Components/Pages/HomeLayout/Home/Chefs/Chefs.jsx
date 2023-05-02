@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaRegHeart } from 'react-icons/fa';
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../../../Routes/AuthContext/AuthProviders";
 
 const Chefs = ({ data }) => {
+  const {user} = useContext(AuthContext)
+
   return (
-    <div className="mt-12 px-8">
+    <div className="mt-12 md:px-8 px-3">
+      <h1>{user}</h1>
       <h2 className="font-bold text-black text-4xl text-center mb-8">Our Chefs</h2>
       {/* cards */}
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 2xl:grid-cols-4">
       {data.map((singleData) =>  <div key={singleData.id} className="card bg-base-100 shadow-xl">
             <figure>
               <img className="h-60 w-full"
