@@ -23,7 +23,7 @@ const Chefs = ({ data }) => {
               <p className="font-semibold text-md flex gap-2 items-center"><FaRegHeart/> {singleData.likes}</p>
               <div className="card-actions justify-end">
                 <Link to="details">
-                <button className="bg-slate-600 text-white rounded py-2 px-4 font-semibold hover:bg-slate-900 duration-200">View Recipes</button></Link>
+                <button className="bg-slate-900 text-white rounded py-2 px-4 font-semibold hover:bg-slate-600 duration-200">View Recipes</button></Link>
               </div>
             </div>
           </div>
