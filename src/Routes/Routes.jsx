@@ -8,6 +8,7 @@ import Blog from "../Components/Pages/Blog/Blog";
 import Error from "../Components/Pages/Error/Error";
 import About from "../Components/Pages/About/About";
 import Contact from "../Components/Pages/Conact/Contact";
+import ViewDetails from "../Components/Pages/HomeLayout/Home/ViewDetails/ViewDetails";
 
 const router = createBrowserRouter([
   {
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
             loader: () => fetch("http://localhost:5000/home")
             
         },
+        {
+          path: "details",
+          element: <ViewDetails></ViewDetails>
+        }
     ]
   }
 ]);
