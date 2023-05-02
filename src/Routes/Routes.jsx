@@ -5,6 +5,7 @@ import Register from "../Components/LoginLayout/Register/Register";
 import HomeLayout from "../Components/Pages/HomeLayout/HomeLayout";
 import Home from "../Components/Pages/HomeLayout/Home/Home";
 import Blog from "../Components/Pages/Blog/Blog";
+import Error from "../Components/Pages/Error/Error";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
         {
           path: "blog",
           element: <Blog></Blog>
+        },
+        {
+          path: "*",
+          element: <Error></Error>
         }
     ]
   },

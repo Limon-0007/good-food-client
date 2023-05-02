@@ -2,11 +2,21 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Register = () => {
+    const handleSubmit = event => {
+        event.preventDefault()
+        const form = event.target
+        const name = form.name.value
+        const photoURL = form.photo.value
+        const email = form.email.value
+        const password = form.password.value
+
+        console.log(name, photoURL, email, password);
+    }
     return (
         <div className="hero min-h-screen bg-base-200">
         <div className="hero-content">
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <div className="card-body">
+            <form onSubmit={handleSubmit} className="card-body">
                 {/* name */}
               <div className="form-control">
                 <label className="label">
@@ -43,7 +53,7 @@ const Register = () => {
                 <button className="btn btn-primary">Register</button>
               </div>
               <p className='font-semibold mt-2'><small>Already have an account? please </small><Link to="/login" className='text-orange-700 underline'>Login</Link></p>
-            </div>
+            </form>
           </div>
         </div>
       </div>
