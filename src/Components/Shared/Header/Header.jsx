@@ -48,7 +48,7 @@ const Header = () => {
       {/* nav items */}
       <ul
         className={`md:flex md:items-center md:gap-16 font-semibold absolute md:static duration-300 px-6 text-slate-950 md:px-0 md:py-0 py-4 z-50 bg-slate-300 md:bg-inherit w-full md:w-auto text-lg ${
-          menu ? "top-16" : "-top-56"
+          menu ? "top-16" : "-top-96"
         }`}
       >
         <div className="md:hover:bg-slate-300 hover:bg-slate-900 px-2 py-1 rounded duration-300">

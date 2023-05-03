@@ -1,0 +1,44 @@
+[
+    {
+      "id": 1,
+      "name": "Landon Carter",
+      "photo": "https://img.freepik.com/free-photo/portrait-happy-male-chef-dressed-uniform_171337-5354.jpg?size=626&ext=jpg&uid=R101288307&ga=GA1.2.311772693.1668666155&semt=robertav1_2_sidr",
+      "specialty": "Seafood",
+      "recipe": "Grilled Scallops with Lemon Butter Sauce"
+    },
+    {
+      "id": 2,
+      "name": "Sophia Lee",
+      "photo": "https://example.com/sophia-lee.jpg",
+      "specialty": "Korean cuisine",
+      "recipe": "Bulgogi Beef"
+    },
+    {
+      "id": 3,
+      "name": "Jean-Luc Dubois",
+      "photo": "https://example.com/jean-luc-dubois.jpg",
+      "specialty": "French cuisine",
+      "recipe": "Coq au Vin"
+    },
+    {
+      "id": 4,
+      "name": "Margarita Rodriguez",
+      "photo": "https://example.com/margarita-rodriguez.jpg",
+      "specialty": "Mexican cuisine",
+      "recipe": "Chicken Enchiladas"
+    },
+    {
+      "id": 5,
+      "name": "Hiroshi Nakamura",
+      "photo": "https://example.com/hiroshi-nakamura.jpg",
+      "specialty": "Japanese cuisine",
+      "recipe": "Tempura Shrimp"
+    },
+    {
+      "id": 6,
+      "name": "Sara Johnson",
+      "photo": "https://example.com/sara-johnson.jpg",
+      "specialty": "Vegan cuisine",
+      "recipe": "Mushroom Risotto"
+    }
+  ]
