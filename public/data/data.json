@@ -1,44 +1,44 @@
 [
-    {
-      "id": 1,
-      "name": "Landon Carter",
-      "photo": "https://img.freepik.com/free-photo/portrait-happy-male-chef-dressed-uniform_171337-5354.jpg?size=626&ext=jpg&uid=R101288307&ga=GA1.2.311772693.1668666155&semt=robertav1_2_sidr",
-      "specialty": "Seafood",
-      "recipe": "Grilled Scallops with Lemon Butter Sauce"
-    },
-    {
-      "id": 2,
-      "name": "Sophia Lee",
-      "photo": "https://example.com/sophia-lee.jpg",
-      "specialty": "Korean cuisine",
-      "recipe": "Bulgogi Beef"
-    },
-    {
-      "id": 3,
-      "name": "Jean-Luc Dubois",
-      "photo": "https://example.com/jean-luc-dubois.jpg",
-      "specialty": "French cuisine",
-      "recipe": "Coq au Vin"
-    },
-    {
-      "id": 4,
-      "name": "Margarita Rodriguez",
-      "photo": "https://example.com/margarita-rodriguez.jpg",
-      "specialty": "Mexican cuisine",
-      "recipe": "Chicken Enchiladas"
-    },
-    {
-      "id": 5,
-      "name": "Hiroshi Nakamura",
-      "photo": "https://example.com/hiroshi-nakamura.jpg",
-      "specialty": "Japanese cuisine",
-      "recipe": "Tempura Shrimp"
-    },
-    {
-      "id": 6,
-      "name": "Sara Johnson",
-      "photo": "https://example.com/sara-johnson.jpg",
-      "specialty": "Vegan cuisine",
-      "recipe": "Mushroom Risotto"
-    }
-  ]
+  {
+    "id": 1,
+    "name": "Landon Carter",
+    "photo": "https://img.freepik.com/free-photo/portrait-happy-male-chef-dressed-uniform_171337-5354.jpg?size=626&ext=jpg&uid=R101288307&ga=GA1.2.311772693.1668666155&semt=robertav1_2_sidr",
+    "specialty": "Seafood",
+    "recipe": "Grilled Scallops with Lemon Butter Sauce"
+  },
+  {
+    "id": 2,
+    "name": "Sophia Lee",
+    "photo": "https://img.freepik.com/free-photo/thinking-looking-up-young-female-cook-wearing-chef-uniform-grabbed-chin-isolated-white-wall_141793-120079.jpg?size=626&ext=jpg&uid=R101288307&ga=GA1.2.311772693.1668666155&semt=robertav1_2_sidr",
+    "specialty": "Korean cuisine",
+    "recipe": "Bulgogi Beef"
+  },
+  {
+    "id": 3,
+    "name": "Jean-Luc Dubois",
+    "photo": "https://img.freepik.com/free-photo/happy-young-cook-uniform-holding-salad_171337-5347.jpg?size=626&ext=jpg&uid=R101288307&ga=GA1.2.311772693.1668666155&semt=robertav1_2_sidr",
+    "specialty": "French cuisine",
+    "recipe": "Coq au Vin"
+  },
+  {
+    "id": 4,
+    "name": "Margarita Rodriguez",
+    "photo": "https://img.freepik.com/free-photo/young-confident-caucasian-cook-girl-chef-uniform-crosses-arms-looks-camera-isolated-violet-wall-with-copy-space_141793-33151.jpg?size=626&ext=jpg&uid=R101288307&ga=GA1.1.311772693.1668666155&semt=robertav1_2_sidr",
+    "specialty": "Mexican cuisine",
+    "recipe": "Chicken Enchiladas"
+  },
+  {
+    "id": 5,
+    "name": "Hiroshi Nakamura",
+    "photo": "https://img.freepik.com/free-photo/front-view-young-female-cook-white-cook-suit-posing-with-delighted-expression-pink-space-cook-photo_140725-29054.jpg?size=626&ext=jpg&uid=R101288307&ga=GA1.1.311772693.1668666155&semt=robertav1_2_sidr",
+    "specialty": "Japanese cuisine",
+    "recipe": "Tempura Shrimp"
+  },
+  {
+    "id": 6,
+    "name": "Sara Johnson",
+    "photo": "https://img.freepik.com/free-photo/medium-shot-smiley-woman-cooking_23-2149631698.jpg?size=626&ext=jpg&uid=R101288307&ga=GA1.1.311772693.1668666155&semt=robertav1_2_sidr",
+    "specialty": "Vegan cuisine",
+    "recipe": "Mushroom Risotto"
+  }
+]

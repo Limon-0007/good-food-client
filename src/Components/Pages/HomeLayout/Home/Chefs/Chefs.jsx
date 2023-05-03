@@ -3,12 +3,10 @@ import { FaRegHeart } from 'react-icons/fa';
 import { Link, useParams } from "react-router-dom";
 
 const Chefs = ({ data }) => {
-  const params = useParams()
-  console.log(params);
 
   return (
     <div className="mt-12 md:px-8 px-3">
-      <h2 className="font-bold text-black text-4xl text-center mb-8">Our Chefs</h2>
+      <h2 className="font-bold text-4xl text-center mb-8 italic text-orange-400">Our Chefs</h2>
       {/* cards */}
       
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 2xl:grid-cols-4">
