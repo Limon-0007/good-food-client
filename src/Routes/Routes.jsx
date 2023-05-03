@@ -9,6 +9,7 @@ import Error from "../Components/Pages/Error/Error";
 import About from "../Components/Pages/About/About";
 import Contact from "../Components/Pages/Conact/Contact";
 import ViewDetails from "../Components/Pages/HomeLayout/Home/ViewDetails/ViewDetails";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,9 @@ const router = createBrowserRouter([
         },
         {
           path: "blog",
-          element: <Blog></Blog>
+          element: <PrivateRoute>
+            <Blog></Blog>
+          </PrivateRoute>
         },
         {
           path: "about",
@@ -57,7 +60,9 @@ const router = createBrowserRouter([
         },
         {
           path: "details",
-          element: <ViewDetails></ViewDetails>
+          element: <PrivateRoute>
+            <ViewDetails></ViewDetails>
+          </PrivateRoute>
         }
     ]
   }

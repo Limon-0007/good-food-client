@@ -5,6 +5,7 @@ import Chefs from './Chefs/Chefs';
 
 const Home = () => {
     const data = useLoaderData()
+    console.log(data);
     return (
         <>
             <Slider></Slider>

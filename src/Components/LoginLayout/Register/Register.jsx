@@ -1,10 +1,14 @@
 import React, { useContext, useState } from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Routes/AuthContext/AuthProviders";
 
 const Register = () => {
+  const [error, setError] = useState("")
   const { handleRegister } = useContext(AuthContext);
   const [checked, setChecked] = useState(false);
+  const location = useLocation()
+  const navigate = useNavigate()
+  const from = location.state?.from?.pathname || "/"
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -13,11 +17,18 @@ const Register = () => {
     const photoURL = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
+    if(password.length < 6) {
+      setError("Weak password")
+      return
+    }
+
     handleRegister(email, password)
     .then(result => {
       const loggedUser = result.user
       form.reset()
       console.log(loggedUser);
+      navigate(from, {replace: true})
+      setError("")
     })
     .catch(error => {
       console.log(error.message);
@@ -82,6 +93,7 @@ const Register = () => {
                 placeholder="password"
                 className="input input-bordered"
               />
+              <p className="font-semibold text-red-600">{error}</p>
               <label className="label">
                 <a href="#" className="label-text-alt link link-hover">
                   Forgot password?

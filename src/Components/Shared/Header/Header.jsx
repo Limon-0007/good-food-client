@@ -5,18 +5,19 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../Routes/AuthContext/AuthProviders";
 
 const Header = () => {
-  const { user, handleSignOut } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const [menu, setMenu] = useState(false);
 
   const signOut = () => {
-    handleSignOut()
+    logOut()
     .then(result => {
-      console.log(result);
+      console.log(result)
     })
-    .catch(error => {
+    .then(error => {
       console.log(error.message);
     })
   }
+  
   return (
     <nav className="md:flex items-center justify-between md:px-8 py-5">
       <div className="flex items-center justify-between px-6">
@@ -55,7 +56,7 @@ const Header = () => {
             className={({ isActive, isPending }) =>
               isActive ? "text-red-400" : isPending ? "pending" : ""
             }
-            to="/"
+            to="/home"
           >
             Home
           </NavLink>
@@ -98,7 +99,7 @@ const Header = () => {
           </Link>
         )}
         {/* image */}
-        {user && (
+        {user &&  (
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
@@ -118,8 +119,8 @@ const Header = () => {
               <li>
                 <Link>Settings</Link>
               </li>
-              <li>
-                <Link onClick={signOut}>Logout</Link>
+              <li onClick={signOut}>
+                <Link>Logout</Link>
               </li>
             </ul>
           </div>

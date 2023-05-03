@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
-import { Link, Navigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   getAuth,
   signInWithPopup,
@@ -11,8 +11,11 @@ import app from "../../../firebase/firebase.config";
 import { AuthContext } from "../../../Routes/AuthContext/AuthProviders";
 
 const Login = () => {
-  const [user, setUser] = useState(null);
+  const [error, setError] = useState("")
+  const location = useLocation()
   const { handleSignIn } = useContext(AuthContext);
+  const from = location.state?.from?.pathname || "/"
+  const navigate = useNavigate()
 
   const auth = getAuth(app);
   const googleProvider = new GoogleAuthProvider();
@@ -23,10 +26,11 @@ const Login = () => {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
-        setUser(loggedUser);
+        navigate(from, {replace: true})
+        setError("")
       })
       .catch((error) => {
-        console.log(error.message);
+        setError(error.message);
       });
   };
 
@@ -37,10 +41,11 @@ const Login = () => {
       .then((result) => {
         const loggedUser = result.message;
         console.log(loggedUser);
-        setUser(loggedUser);
+        navigate(from, {replace: true})
+        setError("")
       })
       .catch((error) => {
-        console.log(error.message);
+        setError(error.message);
       });
   };
 
@@ -53,12 +58,15 @@ const Login = () => {
     handleSignIn(email, password)
     .then(result => {
       const loggedUser = result.user
+      navigate(from, {replace: true})
+      setError("")
+      form.reset()
       console.log(loggedUser);
     })
-    .catch(error => {
-      console.log(error.message);
+    .catch(()=> {
+      setError("wrong password")
     })
-    console.log(email, password);
+    // console.log(email, password);
   };
 
   return (
@@ -89,6 +97,7 @@ const Login = () => {
                 className="input input-bordered"
                 required
               />
+              <p className="font-semibold text-red-700">{error}</p>
               <label className="label">
                 <Link href="#" className="label-text-alt link link-hover">
                   Forgot password?
