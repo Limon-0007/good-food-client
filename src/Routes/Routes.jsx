@@ -54,7 +54,7 @@ const router = createBrowserRouter([
         {
             path: "/home",
             element: <Home></Home>,
-            loader: () => fetch("http://localhost:5000/home")
+            loader: () => fetch("https://myapp-limonahmed3023-gmailcom.vercel.app/home")
             
         },
         {
@@ -62,7 +62,7 @@ const router = createBrowserRouter([
           element: <PrivateRoute>
             <ViewDetails></ViewDetails>
           </PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:5000/home/${params.id}`)
+          loader: ({params}) => fetch(`https://myapp-limonahmed3023-gmailcom.vercel.app/home/${params.id}`)
         }
     ]
   }

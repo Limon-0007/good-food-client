@@ -3,12 +3,12 @@ import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Routes/AuthContext/AuthProviders";
 
 const Register = () => {
-  const [error, setError] = useState("")
+  const [error, setError] = useState("");
   const { handleRegister } = useContext(AuthContext);
   const [checked, setChecked] = useState(false);
-  const location = useLocation()
-  const navigate = useNavigate()
-  const from = location.state?.from?.pathname || "/"
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -17,22 +17,26 @@ const Register = () => {
     const photoURL = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-    if(password.length < 6) {
-      setError("Weak password")
-      return
+    const confirm_password = form.confirm_password.value;
+    if (password.length < 6) {
+      setError("Weak password");
+      return;
+    } else if (password !== confirm_password) {
+      setError("password doesn't match");
+      return;
     }
 
     handleRegister(email, password)
-    .then(result => {
-      const loggedUser = result.user
-      form.reset()
-      console.log(loggedUser);
-      navigate(from, {replace: true})
-      setError("")
-    })
-    .catch(error => {
-      console.log(error.message);
-    })
+      .then((result) => {
+        const loggedUser = result.user;
+        form.reset();
+        console.log(loggedUser);
+        navigate(from, { replace: true });
+        setError("");
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
     console.log(name, photoURL, email, password);
   };
 
@@ -93,6 +97,17 @@ const Register = () => {
                 placeholder="password"
                 className="input input-bordered"
               />
+              {/* confirm password */}
+              <label className="label">
+                <span className="label-text">Confirm password</span>
+              </label>
+              <input
+                type="password"
+                name="confirm_password"
+                placeholder="Confirm password"
+                className="input input-bordered"
+              />
+              {/* forget pass */}
               <p className="font-semibold text-red-600">{error}</p>
               <label className="label">
                 <a href="#" className="label-text-alt link link-hover">
