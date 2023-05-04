@@ -23,7 +23,7 @@ const Specialist = () => {
                   alt="Image not found"
                 />
               </figure>
-              <div className="card-body">
+              <div className="card-body p-4">
                 <h2 className="font-semibold text-xl">{chef.name}</h2>
                 <p className="font-semibold">Specialty: {chef.specialty}</p>
                 <p className="font-semibold">Most popular recipe: {chef.recipe}</p>
