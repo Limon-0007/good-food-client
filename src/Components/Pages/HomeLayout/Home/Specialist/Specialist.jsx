@@ -1,13 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-const Specialist = () => {
-  const [chefs, setChefs] = useState([]);
-
-  useEffect(() => {
-    fetch("/public/data/data.json")
-      .then((res) => res.json())
-      .then((data) => setChefs(data));
-  }, []);
+const Specialist = ({chefs}) => {
 
   return (
     <div>
